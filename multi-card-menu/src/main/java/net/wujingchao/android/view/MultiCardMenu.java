@@ -393,7 +393,7 @@ public class  MultiCardMenu extends FrameLayout {
         return isConsume;
     }
 
-    private void handleActionMove(MotionEvent event) {
+    private void fchandleActionMove(MotionEvent event) {
         if(whichCardOnTouch == -1 || !isTouchOnCard)return;
         if(supportScrollInView((int) (firstDownY - event.getY()))) return;
         computeVelocity();
@@ -454,7 +454,7 @@ public class  MultiCardMenu extends FrameLayout {
     }
 
     /**
-     * @param direction Negative to check scrolling up, positive to check
+     * @param direction SCv to check scrolling up, positive to check
      *                  scrolling down.
      * @return true if need dispatch touch event to child view,otherwise
      */
@@ -555,6 +555,7 @@ public class  MultiCardMenu extends FrameLayout {
     }
 
     private void computeVelocity() {
+        //units:  使用的速率单位.1的意思是，以一毫秒运动了多少个像素的速率， 1000表示 一秒时间内运动了多少个像素
         mVelocityTracker.computeCurrentVelocity(1000,mMaxVelocity);
         yVelocity = mVelocityTracker.getYVelocity();
         xVelocity = mVelocityTracker.getXVelocity();

@@ -54,6 +54,7 @@ public class MainActivity extends ActionBarActivity {
                 Log.d(TAG,"onTouchCard:" + which);
             }
         });
+
         CheckBox fade = (CheckBox) findViewById(R.id.fade);
         fade.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
